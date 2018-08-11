@@ -1,0 +1,14 @@
+@include media-breakpoint-down(xs) {
+  body {
+    padding-top: 112px;
+  }
+
+  .navbar {
+    .form-inline {
+      width: 100%;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
