@@ -7,9 +7,11 @@ import { SharedModule } from '@app/shared';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { WikiModule } from '@app/wiki/wiki.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   imports: [
+    NgbModule,
     CommonModule,
     TranslateModule,
     CoreModule,

@@ -1,0 +1,6 @@
+<ng-container *ngIf="pokemon && pokemon.id">
+  <img [src]="'assets/imgs/pokemon-sprites/'+pokemon.id + '.png'" [alt]="pokemon.name"
+       onerror="this.src = 'assets/imgs/pokemon-sprites/0.png';"
+       [width]="width || 80"
+       class="img-thumbnail rounded mx-auto img-fluid">
+</ng-container>

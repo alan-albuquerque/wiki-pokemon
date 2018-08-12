@@ -8,21 +8,37 @@ import { IPokemonList, PokemonService } from '@app/wiki/services/pokemon/pokemon
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
+  page = 1;
+  pageSize = 7;
+  collectionSize = 0;
   isLoading: boolean;
   pokemonList: IPokemonList;
 
   constructor(private pokemonService: PokemonService) {
   }
 
+  pageChanged(page: number) {
+    console.log(page);
+    this.page = page;
+    this.loadList();
+  }
+
   ngOnInit() {
+    this.loadList();
+  }
+
+  loadList() {
     this.isLoading = true;
-    this.pokemonService.list()
+    this.pokemonService.list({
+      limit: this.pageSize,
+      page: this.page,
+    })
       .pipe(finalize(() => {
         this.isLoading = false;
       }))
       .subscribe((resp) => {
         this.pokemonList = resp;
+        this.collectionSize = resp.count;
       });
   }
 

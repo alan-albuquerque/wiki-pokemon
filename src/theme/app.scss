@@ -2,7 +2,7 @@
 body {
   //background: url("assets/imgs/bg-site.png") no-repeat top center;
   //background-size: 100%;
-  font-family: "Lato", sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   padding-top: 58px;
   min-width: 320px;
 }
@@ -10,4 +10,8 @@ body {
 // UTILITIES
 .img-thumbnail-small {
   max-width: 80px;
+}
+
+.img-thumbnail-big {
+  max-width: 120px;
 }
