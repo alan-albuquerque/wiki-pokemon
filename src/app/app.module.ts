@@ -10,7 +10,6 @@ import { environment } from '@env/environment';
 import { CoreModule } from '@app/core';
 import { SharedModule } from '@app/shared';
 import { HomeModule } from './home/home.module';
-import { AboutModule } from './about/about.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -28,7 +27,6 @@ import { ToastrModule } from 'ngx-toastr';
     CoreModule,
     SharedModule,
     HomeModule,
-    AboutModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot()
