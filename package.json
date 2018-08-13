@@ -1,6 +1,7 @@
 {
-  "name": "ng-x-rocket",
+  "name": "wiki-pokemon",
   "version": "1.0.0",
+  "author": "Alan Albuquerque",
   "private": true,
   "scripts": {
     "ng": "ng",
