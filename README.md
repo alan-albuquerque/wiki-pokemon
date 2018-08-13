@@ -4,6 +4,11 @@
 
 https://wikpokemon-61c37.firebaseapp.com
 
+## Install 
+```
+$ npm install
+```
+
 ## Run 
 
 ```
