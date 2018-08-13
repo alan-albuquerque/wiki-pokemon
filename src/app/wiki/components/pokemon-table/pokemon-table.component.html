@@ -2,8 +2,9 @@
   <thead class="thead-dark">
   <tr>
     <th width="30px" scope="col">#</th>
-    <th width="80px" scope="col" translate>Imagem</th>
+    <th width="80px" class="d-none d-sm-table-cell" scope="col" translate>Imagem</th>
     <th scope="col" translate>Nome</th>
+    <th width="80px" scope="col" translate></th>
   </tr>
   </thead>
   <tbody>
@@ -15,7 +16,7 @@
     </th>
     <td
       appPokemonDetail [pokemon-id]="pokemon.id"
-      class="align-middle hand-pointer d-none d-sm-block">
+      class="align-middle hand-pointer d-none d-sm-block p-1">
       <app-img-pokemon [pokemon]="{name: pokemon.name, id: pokemon.id}"></app-img-pokemon>
     </td>
     <td
