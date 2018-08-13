@@ -1,6 +1,15 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LoaderComponent } from './loader.component';
+import {
+  MissingTranslationHandler,
+  TranslateCompiler,
+  TranslateLoader,
+  TranslateModule, TranslateParser,
+  TranslateService,
+  TranslateStore
+} from '@ngx-translate/core';
+import { extract } from '@app/core';
 
 describe('LoaderComponent', () => {
   let component: LoaderComponent;
@@ -8,8 +17,10 @@ describe('LoaderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-        declarations: [LoaderComponent]
-      })
+      imports: [TranslateModule.forRoot()],
+      declarations: [LoaderComponent],
+      providers: []
+    })
       .compileComponents();
   }));
 
@@ -41,13 +52,13 @@ describe('LoaderComponent', () => {
     expect(div.getAttribute('hidden')).toBeNull();
   });
 
-  it('should not display a message by default', () => {
+  it('should display default message', () => {
     // Arrange
     const element = fixture.nativeElement;
     const span = element.querySelectorAll('span')[0];
 
     // Assert
-    expect(span.innerText).toBe('');
+    expect(span.innerText).toBe(extract('aguarde...'));
   });
 
   it('should display specified message', () => {

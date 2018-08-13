@@ -3,34 +3,38 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 import { HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
 
 import { ErrorHandlerInterceptor } from './error-handler.interceptor';
+import { ToastrModule, ToastrService } from 'ngx-toastr';
 
 describe('ErrorHandlerInterceptor', () => {
   let errorHandlerInterceptor: ErrorHandlerInterceptor;
   let http: HttpClient;
+  let toastr: ToastrService;
   let httpMock: HttpTestingController;
 
   function createInterceptor() {
-    errorHandlerInterceptor = new ErrorHandlerInterceptor();
+    errorHandlerInterceptor = new ErrorHandlerInterceptor(toastr);
     return errorHandlerInterceptor;
   }
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
+      imports: [HttpClientTestingModule, ToastrModule.forRoot()],
       providers: [{
         provide: HTTP_INTERCEPTORS,
         useFactory: createInterceptor,
-        multi: true
+        multi: true,
       }]
     });
   });
 
   beforeEach(inject([
     HttpClient,
-    HttpTestingController
+    HttpTestingController,
+    ToastrService,
   ], (_http: HttpClient,
-      _httpMock: HttpTestingController) => {
-
+      _httpMock: HttpTestingController,
+      _toastr: ToastrService) => {
+    toastr = _toastr;
     http = _http;
     httpMock = _httpMock;
   }));

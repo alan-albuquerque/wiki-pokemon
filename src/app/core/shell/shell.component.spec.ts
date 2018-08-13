@@ -4,6 +4,8 @@ import { TranslateModule } from '@ngx-translate/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CoreModule } from '../core.module';
 import { ShellComponent } from './shell.component';
+import { ToastrModule } from 'ngx-toastr';
+import { WikiModule } from '@app/wiki/wiki.module';
 
 describe('ShellComponent', () => {
   let component: ShellComponent;
@@ -15,7 +17,9 @@ describe('ShellComponent', () => {
         RouterTestingModule,
         TranslateModule.forRoot(),
         NgbModule.forRoot(),
-        CoreModule
+        CoreModule,
+        ToastrModule.forRoot(),
+        WikiModule,
       ],
       providers: [
       ]

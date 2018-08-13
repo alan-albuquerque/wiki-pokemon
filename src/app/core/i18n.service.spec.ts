@@ -4,7 +4,7 @@ import { Subject } from 'rxjs';
 
 import { extract, I18nService } from './i18n.service';
 
-const defaultLanguage = 'en-US';
+const defaultLanguage = 'pt-BR';
 const supportedLanguages = ['eo', 'en-US', 'pt-BR'];
 
 class MockTranslateService {
@@ -21,7 +21,7 @@ class MockTranslateService {
   }
 
   getBrowserCultureLang() {
-    return 'en-US';
+    return 'pt-BR';
   }
 
   setTranslation(lang: string, translations: Object, shouldMerge?: boolean) { }
@@ -67,7 +67,7 @@ describe('I18nService', () => {
 
   describe('extract', () => {
     it('should not modify string', () => {
-      expect(extract('Página inicial')).toEqual('Home');
+      expect(extract('Página inicial')).toEqual('Página inicial');
     });
   });
 

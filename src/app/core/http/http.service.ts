@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 
 import { ErrorHandlerInterceptor } from './error-handler.interceptor';
 import { CacheInterceptor } from './cache.interceptor';
-import { ApiPrefixInterceptor } from './api-prefix.interceptor';
 
 // HttpClient is declared in a re-exported module, so we have to extend the original module to make it work properly
 // (see https://github.com/Microsoft/TypeScript/issues/13897)
@@ -53,7 +52,6 @@ class HttpInterceptorHandler implements HttpHandler {
  * Except for very specific needs, you should better configure these interceptors directly in the constructor below
  * for better readability.
  *
- * For static interceptors that should always be enabled (like ApiPrefixInterceptor), use the standard
  * HTTP_INTERCEPTORS token.
  */
 export const HTTP_DYNAMIC_INTERCEPTORS = new InjectionToken<HttpInterceptor>('HTTP_DYNAMIC_INTERCEPTORS');
@@ -72,7 +70,6 @@ export class HttpService extends HttpClient {
     if (!this.interceptors) {
       // Configure default interceptors that can be disabled here
       this.interceptors = [
-        this.injector.get(ApiPrefixInterceptor),
         this.injector.get(ErrorHandlerInterceptor)
       ];
     }
@@ -85,10 +82,6 @@ export class HttpService extends HttpClient {
 
   skipErrorHandler(): HttpClient {
     return this.removeInterceptor(ErrorHandlerInterceptor);
-  }
-
-  disableApiPrefix(): HttpClient {
-    return this.removeInterceptor(ApiPrefixInterceptor);
   }
 
   // Override the original method to wire interceptors when triggering the request.
