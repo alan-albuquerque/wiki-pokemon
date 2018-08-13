@@ -1,14 +1,16 @@
 {
-	"APP_NAME": "WikiPokémon",
-	"Altura": "Altura",
-	"Buscar": "Buscar",
-	"Digite o número (ID) do Pokémon": "Digite o número (ID) do Pokémon",
-	"Digite o número ...": "Digite o número ...",
-	"Erro de comunicação com o servidor.": "Erro de comunicação com o servidor.",
-	"Habilidades": "Habilidades",
-	"Peso": "Peso",
-	"Página inicial": "Página inicial",
-	"Tipo": "Tipo",
-	"aguarde...": "aguarde...",
-	"favoritar": "favoritar"
+  "APP_NAME": "WikiPokémon",
+  "Altura": "Altura",
+  "Buscar": "Buscar",
+  "Digite o número (ID) do Pokémon": "Digite o número (ID) do Pokémon",
+  "Digite o número ...": "Digite o número ...",
+  "Erro de comunicação com o servidor.": "Erro de comunicação com o servidor.",
+  "Habilidades": "Habilidades",
+  "Peso": "Peso",
+  "Imagem": "Imagem",
+  "Nome": "Nome",
+  "Página inicial": "Página inicial",
+  "Tipo": "Tipo",
+  "aguarde...": "aguarde...",
+  "favoritar": "favoritar"
 }
