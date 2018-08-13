@@ -4,7 +4,11 @@ body {
   //background-size: 100%;
   font-family: "Josefin Sans", sans-serif;
   padding-top: 58px;
-  min-width: 320px;
+  min-width: $min-width-site;
+}
+
+html {
+  min-width: $min-width-site;
 }
 
 // UTILITIES
@@ -14,4 +18,21 @@ body {
 
 .img-thumbnail-big {
   max-width: 120px;
+}
+
+.hand-pointer {
+  cursor: pointer;
+}
+
+.favorite-icon {
+  color: #ababab;
+
+  &.is-favorite {
+    color: #dcb335;
+  }
+}
+
+.has-error {
+  background: #ffd7d4 !important;
+  color: red;
 }

@@ -1,19 +1,25 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { LoaderComponent } from './loader/loader.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoaderComponent } from '@app/shared/loader/loader.component';
+import { PokemonSearchInputComponent } from '@app/shared/pokemon-search-input/pokemon-search-input.component';
 
 @NgModule({
   imports: [
     CommonModule,
     TranslateModule,
+    ReactiveFormsModule,
+    FormsModule,
   ],
   declarations: [
-    LoaderComponent
+    LoaderComponent,
+    PokemonSearchInputComponent,
   ],
   exports: [
-    LoaderComponent
+    LoaderComponent,
+    PokemonSearchInputComponent,
   ]
 })
 export class SharedModule {

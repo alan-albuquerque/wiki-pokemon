@@ -12,3 +12,9 @@
   width: 28px;
   margin-right: 10px;
 }
+
+header {
+  .navbar {
+    min-width: $min-width-site;
+  }
+}

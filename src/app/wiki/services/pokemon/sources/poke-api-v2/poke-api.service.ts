@@ -17,7 +17,7 @@ export class PokeApiV2Service extends PokemonService {
   list(data: IListData): Observable<IPokemonList> {
     return this.http
       .cache()
-      .get<IPokemonListResponse>(`${this.apiUrl}pokemon`, {
+      .get<IPokemonListResponse>(`${this.apiUrl}pokemon/${data.name || ''}`, {
         params: {
           offset: ((data.page * data.limit) - data.limit).toString(),
           limit: data.limit.toString(),

@@ -1,6 +1,5 @@
 import { Directive, HostListener, Input } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ModalDetailPokemonComponent } from '@app/wiki/components/modal-detail-pokemon/modal-detail-pokemon.component';
+import { ModalDetailPokemonService } from '@app/wiki/services/modal/modal-detail-pokemon.service';
 
 @Directive({
   selector: '[appPokemonDetail]'
@@ -8,19 +7,12 @@ import { ModalDetailPokemonComponent } from '@app/wiki/components/modal-detail-p
 export class PokemonDetailDirective {
   @Input('pokemon-id') pokemonId: number;
 
-  constructor(private modalService: NgbModal) {
+  constructor(private modalDetailPokemonService: ModalDetailPokemonService) {
   }
 
   @HostListener('click', ['$event'])
   onClick() {
-    this.open();
+    this.modalDetailPokemonService.open(this.pokemonId);
   }
 
-  open() {
-    const modalRef = this.modalService.open(ModalDetailPokemonComponent, {
-      centered: true
-    });
-    const modal: ModalDetailPokemonComponent = modalRef.componentInstance;
-    modal.pokemonId = this.pokemonId;
-  }
 }

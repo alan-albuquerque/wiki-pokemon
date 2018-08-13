@@ -1,0 +1,33 @@
+<table class="table table-striped table-hover">
+  <tbody>
+  <tr *ngFor="let pokemon of pokemonList.data">
+    <td
+      appPokemonDetail [pokemon-id]="pokemon.id"
+      width="30px"
+      class="align-middle hand-pointer"
+      scope="row">{{pokemon.id}}
+    </td>
+    <td
+      appPokemonDetail [pokemon-id]="pokemon.id"
+      width="80px"
+      class="align-middle hand-pointer d-none d-sm-block">
+      <app-img-pokemon [pokemon]="{name: pokemon.name, id: pokemon.id}"></app-img-pokemon>
+    </td>
+    <td
+      appPokemonDetail [pokemon-id]="pokemon.id"
+      class="align-middle hand-pointer"><h4>{{pokemon.name | titlecase}}</h4></td>
+    <td
+      width="30px"
+      class="align-middle"
+      scope="row">
+      <button (click)="changeIsFavorite(pokemon)"
+              type="button"
+              class="btn btn-link"
+              [title]="'favoritar' | translate">
+        <i class="fa fa-star favorite-icon"
+           [ngClass]="{'is-favorite': isFavorite(pokemon)}"></i>
+      </button>
+    </td>
+  </tr>
+  </tbody>
+</table>

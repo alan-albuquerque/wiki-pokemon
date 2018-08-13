@@ -32,6 +32,7 @@ export interface IPokemon {
 export interface IListData {
   page: number;
   limit: number;
+  name?: string;
 }
 
 export abstract class PokemonService {

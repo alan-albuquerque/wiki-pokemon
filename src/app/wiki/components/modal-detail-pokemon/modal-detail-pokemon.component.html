@@ -1,5 +1,5 @@
 <div class="modal-header">
-  <h4 class="modal-title" *ngIf="pokemon">{{pokemon.name | titlecase}} #{{pokemon.id}}</h4>
+  <h4 class="modal-title" *ngIf="pokemon && !isLoading">{{pokemon.name | titlecase}} #{{pokemon.id}}</h4>
   <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss()">
     <span aria-hidden="true">&times;</span>
   </button>
@@ -7,13 +7,13 @@
 <div class="modal-body">
   <app-loader [isLoading]="isLoading"></app-loader>
 
-  <ng-container *ngIf="pokemon">
+  <ng-container *ngIf="pokemon && !isLoading">
     <div class="container">
       <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-4 mt-3">
           <app-img-pokemon [pokemon]="{id: pokemon.id, name: pokemon.name}" [width]="130"></app-img-pokemon>
         </div>
-        <div class="col-sm">
+        <div class="col-sm mt-3">
           <div class="row">
             <div class="col">
               <p class="mb-0"><strong translate>Altura</strong></p>

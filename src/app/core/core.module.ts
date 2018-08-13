@@ -14,14 +14,19 @@ import { HttpCacheService } from './http/http-cache.service';
 import { ApiPrefixInterceptor } from './http/api-prefix.interceptor';
 import { ErrorHandlerInterceptor } from './http/error-handler.interceptor';
 import { CacheInterceptor } from './http/cache.interceptor';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from '@app/shared';
 
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     TranslateModule,
     NgbModule,
-    RouterModule
+    SharedModule,
+    RouterModule,
   ],
   declarations: [
     HeaderComponent,

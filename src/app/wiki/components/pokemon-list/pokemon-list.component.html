@@ -1,0 +1,21 @@
+<div class="container-fluid mt-5">
+  <div class="text-center">
+    <app-loader [isLoading]="isLoading"></app-loader>
+  </div>
+  <div *ngIf="pokemonList?.data && !isLoading">
+    <div class="table-responsive">
+      <app-pokemon-table [pokemonList]="pokemonList"></app-pokemon-table>
+
+      <ngb-pagination
+        class="d-flex justify-content-center"
+        (pageChange)="pageChanged($event)"
+        [collectionSize]="collectionSize"
+        [pageSize]="pageSize"
+        [maxSize]="4"
+        [(page)]="page"
+        [boundaryLinks]="false"
+      ></ngb-pagination>
+    </div>
+
+  </div>
+</div>

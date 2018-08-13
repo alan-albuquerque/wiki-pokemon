@@ -1,4 +1,14 @@
 {
   "APP_NAME": "WikiPokémon",
-	"Página inicial": "Home"
+  "Altura": "Height",
+  "Buscar": "Search",
+  "Digite o número (ID) do Pokémon": "Enter the Pokémon's Number (ID) ",
+  "Digite o número ...": "Enter the number ...",
+  "Erro de comunicação com o servidor.": "Error communicating with the server.",
+  "Habilidades": "Skills",
+  "Peso": "Weight",
+  "Página inicial": "Home page",
+  "Tipo": "Type",
+  "aguarde...": "wait...",
+  "favoritar": "favor"
 }

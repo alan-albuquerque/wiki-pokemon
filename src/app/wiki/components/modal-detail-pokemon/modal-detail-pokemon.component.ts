@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { IPokemon, PokemonService } from '@app/wiki/services/pokemon/pokemon.service';
 import { finalize } from 'rxjs/operators';
@@ -8,12 +8,10 @@ import { finalize } from 'rxjs/operators';
   templateUrl: './modal-detail-pokemon.component.html',
   styleUrls: ['./modal-detail-pokemon.component.scss']
 })
-export class ModalDetailPokemonComponent implements OnInit {
+export class ModalDetailPokemonComponent {
   get pokemon(): IPokemon {
     return this._pokemon;
   }
-
-  public pokemonId: number;
 
   private _pokemon: IPokemon;
 
@@ -22,17 +20,13 @@ export class ModalDetailPokemonComponent implements OnInit {
   constructor(public activeModal: NgbActiveModal, private pokemonService: PokemonService) {
   }
 
-  ngOnInit() {
-    this.loadPokemonDetail();
-  }
-
-  loadPokemonDetail() {
-    if (!this.pokemonId) {
+  loadPokemonDetail(pokemonId: number) {
+    if (!pokemonId) {
       this._pokemon = null;
       return;
     }
     this.isLoading = true;
-    this.pokemonService.get(this.pokemonId)
+    this.pokemonService.get(pokemonId)
       .pipe(finalize(() => {
         this.isLoading = false;
       }))
